@@ -1,0 +1,102 @@
+.title{
+    width: 60vw;
+    height: 10vh;
+    font-size: 50px;
+    padding: 20px;
+    text-align: left;
+}
+
+.main{
+    width: 60vw;
+    height: 60vh;
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.Email{
+    width: 99%;
+    height: 80px;
+    padding: 5px;
+    margin: 5px;
+    line-height: 40px;
+}
+
+.First{
+    float: left;
+    width: 45%;
+    height: 80px;
+    padding: 5px;
+    margin: 5px;
+    line-height: 40px;
+}
+
+.Last{
+    float: right;
+    width: 45%;
+    height: 80px;
+    padding: 5px;
+    margin: 5px;
+    line-height: 40px;
+}
+
+.Message{
+    clear: both;
+    float: none;
+    width: 99%;
+    height: 150px;
+    padding: 5px;
+    margin: 5px;
+    line-height: 40px;
+}
+
+.inputbox{
+    width: 95%;
+    height: 40%;
+    font-size: 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: lightgray;
+}
+
+.messagebox{
+    width: 95%;
+    height: 70%;
+    font-size: 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: lightgray;
+}
+
+.bellow_left{
+    float: left;
+    width: 60%;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    line-height: 40px;
+    text-align: left;
+    font-size: small;
+}
+
+.bellow_right{
+    float: right;
+    width: 30%;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    line-height: 40px;
+    text-align: right;
+}
+
+.sendbutton{
+    width: 80%;
+    height: 60%;
+    background-color: rgb(255, 185, 56);
+    border: solid;
+    border-color: white;
+    border-radius: 6px;
+}
+
