@@ -18,8 +18,8 @@
 
 .profile_image{
     float: left;
-    width: 10%;
-    height: 90%;
+    width: 70px;
+    height: 70px;
     margin: 1px;
     background-color : white;
     text-align: center;
@@ -67,7 +67,7 @@
 }
 
 .imagebox{
-    width : 20vw;
+    width : 30vw;
     height: 40vh;
     background-color: white;
     float: left;
