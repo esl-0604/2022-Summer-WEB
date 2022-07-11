@@ -1,0 +1,85 @@
+
+.profileBox{
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 600px;
+    height: 300px;
+    margin: 0px;
+    padding: 10px;
+}
+
+.profileImage{
+    width: 30%;
+    height: 60%;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name{
+    width: 30%;
+    height: 20%;
+    background-color: white;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Edu SA Beginner', ;
+}
+
+.mainBox{
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 600px;
+    height: 400px;
+    margin: 0px;
+    padding: 10px;
+}
+.mainCenter{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 55%;
+    height: 98%;
+    background-color: white;
+}
+.mainText{
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+    max-height: 30%;    
+    margin: auto;
+    font-family: 'Edu SA Beginner', cursive;
+    background-color: white;
+}
+h3{
+    line-height: 10px;
+}
+.mainSide{
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20%;
+    height: 98%;
+    background-color: white;
+}
+.iconBox{
+    width: 50%;
+    height: 10%;
+    background-color: white;
+}
+
