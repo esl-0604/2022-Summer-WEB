@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./alertbox.css">
+    <title>Document</title>
+    <script>
+        function OnOff(self){
+            if(self.value === 'on'){
+                document.getElementById("box1").style.visibility="visible";
+                self.value = 'off';
+            } else{
+                document.getElementById("box1").style.visibility="hidden";
+                self.value = 'on';
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="off" onclick="OnOff(this);">
+    <div id="box1" class = "box">
+        <div class="alertBox" style="background-color: lightyellow;">
+            <div class="boxText">
+            <strong>Holy guacamole!</strong> &nbsp;
+            You should check in on some of those fields below.
+            </div>
+            <div class="boxImage">
+
+            </div>
+        </div>
+        <div class="alertBox" style="background-color: lightblue;">
+            <div class="boxText">
+                <strong>Holy guacamole!</strong> &nbsp;
+                You should check in on some of those fields below.
+            </div>
+            <div class="boxImage" onclick="this.parentNode.parentNode.style.display = 'none';">
+                
+            </div>
+        </div>
+        <div class="alertBox" style="background-color: lightgray;">
+            <div class="boxText">
+                <strong>Holy guacamole!</strong> &nbsp;
+                You should check in on some of those fields below.
+            </div>
+            <div class="boxImage">
+
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

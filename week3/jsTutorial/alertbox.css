@@ -1,0 +1,43 @@
+.box{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0px;
+
+    width: 800px;
+    height: 300px;
+
+    background-color: white;
+}
+.alertBox{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    width: 80%;
+    height: 15%;
+    margin: 5px;
+    padding: 10px;
+}
+.boxText{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    width: 90%;
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+}
+.boxImage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    width: 10%;
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+}
