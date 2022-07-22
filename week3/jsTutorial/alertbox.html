@@ -5,48 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./alertbox.css">
     <title>Document</title>
-    <script>
-        function OnOff(self){
-            if(self.value === 'on'){
-                document.getElementById("box1").style.visibility="visible";
-                self.value = 'off';
-            } else{
-                document.getElementById("box1").style.visibility="hidden";
-                self.value = 'on';
-            }
-        }
-    </script>
 </head>
 <body>
     <input type="button" value="off" onclick="OnOff(this);">
-    <div id="box1" class = "box">
+    <div id="box">
         <div class="alertBox" style="background-color: lightyellow;">
             <div class="boxText">
-            <strong>Holy guacamole!</strong> &nbsp;
-            You should check in on some of those fields below.
+                <strong>Holy guacamole!</strong> &nbsp;
+                You should check in on some of those fields below.
             </div>
-            <div class="boxImage">
-
-            </div>
+            <div class="boxImage" onclick="boxdelete(this.parentNode);"></div>
         </div>
-        <div class="alertBox" style="background-color: lightblue;">
+        <div id="alert2" class="alertBox" style="background-color: lightblue;">
             <div class="boxText">
                 <strong>Holy guacamole!</strong> &nbsp;
                 You should check in on some of those fields below.
             </div>
-            <div class="boxImage" onclick="this.parentNode.parentNode.style.display = 'none';">
-                
-            </div>
+            <div class="boxImage" onclick="boxdelete(this.parentNode);"></div>
         </div>
-        <div class="alertBox" style="background-color: lightgray;">
+        <div id="alert3" class="alertBox" style="background-color: lightgray;">
             <div class="boxText">
                 <strong>Holy guacamole!</strong> &nbsp;
                 You should check in on some of those fields below.
             </div>
-            <div class="boxImage">
-
-            </div>
+            <div class="boxImage" onclick="boxdelete(this.parentNode);"></div>
         </div>
     </div>  
+    <script>
+        function OnOff(self){
+            if(self.value === 'on'){
+                document.getElementById("box").style.visibility="visible";
+                self.value = 'off';
+            } else{
+                document.getElementById("box").style.visibility="hidden";
+                self.value = 'on';
+            }
+        }
+
+        function boxdelete(self){
+            self.style.display="none";
+        }
+    </script>
 </body>
 </html>

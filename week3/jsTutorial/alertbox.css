@@ -1,4 +1,4 @@
-.box{
+#box{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -31,10 +31,12 @@
     margin: 0px;
     padding: 10px;
 }
-.boxImage{
-    display: flex;
+.boxImage:after {
+    display: inline-block;
     justify-content: start;
     align-items: center;
+    content: "\00d7";
+    font-size: 25pt;
 
     width: 10%;
     height: 100%;
