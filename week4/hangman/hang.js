@@ -14,8 +14,6 @@ const gameStart = (self) => {
         hangman.style.visibility="visible";
         right.style.visibility="visible";
         answerSheet.style.visibility="visible";
-
-
         
         // 게임 시작 시에 정답 리스트 중에서 한 단어가 랜덤으로 answer에 할당됨.  
         answer = answerList[Math.floor(Math.random() * answerList.length)];
@@ -70,7 +68,7 @@ const Answering = (e) => {
             window.open(
                 "winpop.html", 
                 "Game Win", 
-                "width=300px, height=50px, left=500, top=400"
+                "width=300px, height=50px, left=600, top=400"
             );
         }
     }else{
@@ -94,7 +92,7 @@ const Answering = (e) => {
             window.open(
                 "losepop.html", 
                 "Game Lose", 
-                "width=300px, height=50px, left=500, top=400"
+                "width=300px, height=50px, left=600, top=400"
             );
         }
     }
