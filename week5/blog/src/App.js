@@ -23,7 +23,7 @@ function App() {
 
   const changingTitle = () => {
     const newTitle = [...title];
-  
+
     if(newTitle[0] === 0){
       newTitle[1] = 'React에 대해 공부해봅시다';
       newTitle[0] = 1;
