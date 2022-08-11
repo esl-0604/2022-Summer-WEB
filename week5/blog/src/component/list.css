@@ -1,0 +1,10 @@
+.list {
+    text-align: left;
+    padding: 20px;
+    white-space: pre-wrap;
+}
+  
+.icon {
+    cursor: pointer;
+    margin-right: 10px;
+  }
