@@ -1,45 +1,82 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import { GoGrabber } from "react-icons/go";
+import { AiOutlinePlus } from "react-icons/ai";
 import './App.css';
+import Modal from "./component/modal";
+import List from './component/list';
+import Posting from './component/posting';
 
-function List(props) {
-  return <div className='list'>
-    <h3> { props.title } <span className='icon' onClick={()=>{props.action[1](props.action[0]+1)}}>  👍</span>{props.action[0]}</h3>
-    <p> { props.body } </p>
-    <hr/>
-  </div>
-}
+
+
 
 function App() {
 
-  const [title, titlechange] = useState('React')
-  const [p1, p1change] = useState(['1. JSX', 'react에서는 html과 조금 다른 jsx라는 언어를 사용한다. \n\n jsx와 html이 다른 문법들에 대해서 알아보고 이해할 필요가 있다.'])
-  const [p2, p2change] = useState(['2. Data Binding', 'react에서는 기존 js보다 훨씬 쉽고 빠르게 데이터 바인딩을 할 수 있다. \n\n 그냥 변수에 데이터를 넣고 html에 {}로 그대로 전달하면 된다.'])
-  const [p3, p3change] = useState(['3. State', 'useState 함수를 활용하여 사용한다. \n\n useState() 사용법을 익히자.\n\n useState()의 장점 \n - 데이터가 바뀔 때마다 자동으로 새로고침 없이 재랜더링을 해준다. \n - state를 deep copy하여 사용할 수 있다.'])
-  const [p4, p4change] = useState(['4. Component', 'react에서는 html 태그를 사용자 정의로 만들어서 활용할 수 있다. \n\n 함수형식으로 정의하여 프로퍼티로 전달해준 내용을 해당 태그에서 표현할 수 있다.'])
+  const [modal, setModal] = useState(false);
 
-  const [따봉1, 따봉변경1] = useState(0)
-  const [따봉2, 따봉변경2] = useState(0)
-  const [따봉3, 따봉변경3] = useState(0)
-  const [따봉4, 따봉변경4] = useState(0)
+  const [title, titlechange] = useState([0, 'React']);
+  const [post, postChange] = useState([
+      {index : 0, title : 'JSX', like : 0},
+      {index : 1, title : 'Data Binding', like : 0},
+      {index : 2, title : 'State', like : 0},
+      {index : 3, title : 'Component', like : 0}
+    ]);
+
+  const changingTitle = () => {
+    const newTitle = [...title];
+
+    if(newTitle[0] === 0){
+      newTitle[1] = 'React에 대해 공부해봅시다';
+      newTitle[0] = 1;
+    }else{
+      newTitle[1] = 'React';
+      newTitle[0] = 0;
+    }
+  
+    titlechange(newTitle);
+  }
+
+  const [postingON, setPosting] = useState(false);
+
+  const posting = () => {
+    if(postingON === false){
+      setPosting(true);
+      console.log('포스팅 중~~')
+    }
+  }
 
   return (
     <div className='App'>
+
+      {/* 화면 최상단 */}
       <nav className='black-nav'>
         <div className='nav-title'><span onClick={() => {window.location.href = '/';}} style={{cursor: 'pointer'}}>개발 Blog</span></div>
-        <div className='nav-icon'>
+        <div className='nav-icon' onClick={()=>{
+          setModal(!modal);
+        }}>
           <GoGrabber style={{width: '100%', height: '100%', cursor: 'pointer'}}/>
+          {modal === true ? <Modal/> : null}
         </div>
       </nav>
+      
 
-      <div className='list'>
-        <h1> { title } </h1>
+      {/* 화면 본문 */}
+      <div className='list-body'>
+      
+      {/* 화면 본문 제목 */}
+        <h1 style = { {cursor: 'pointer'} } onClick={ changingTitle }> { title[1] } </h1>
+
+      {/* 화면 본문 리스트 */}
+        <List post = {post} postChange = {postChange} />
+
+      {/* 화면 본문 리스트 추가 창 */}
+        {postingON === true ? <Posting post={post} setPost={postChange} posting={setPosting}/> : null}
+
+      {/* 화면 본문 리스트 추가 버튼 */}
+        <button className='posting-button' style = { {cursor: 'pointer'} } onClick={posting} disabled = {postingON}>
+          <AiOutlinePlus  style={{width: '100%', height: '100%', color: 'gray'}}/>
+        </button>
+        
       </div>
-      <List title = {p1[0]} body = {p1[1]} action = {[따봉1, 따봉변경1]}></List>
-      <List title = {p2[0]} body = {p2[1]} action = {[따봉2, 따봉변경2]}></List>
-      <List title = {p3[0]} body = {p3[1]} action = {[따봉3, 따봉변경3]}></List>
-      <List title = {p4[0]} body = {p4[1]} action = {[따봉4, 따봉변경4]}></List>
     </div>
   );
 }

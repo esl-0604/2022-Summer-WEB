@@ -29,16 +29,31 @@ body {
   width: 40px;
   height: 40px;
   padding: 5px;
+  position: relative;
 }
 
-.list {
-  text-align: left;
+.list-body {
   padding: 20px;
-  white-space: pre-wrap;
+  text-align: left;
 }
 
-.icon {
-  cursor: pointer;
+.posting-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  margin-left: 50px;
+  width: 50px;
+  height: 50px;
+  
+  border-top: none;
+  border-left: none;
+  border-right: solid;
+  border-bottom: solid;
+  border-color: antiquewhite;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .App-logo {
