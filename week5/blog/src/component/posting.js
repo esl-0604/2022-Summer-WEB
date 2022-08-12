@@ -5,14 +5,9 @@ function Posting(props) {
     let post = props.post;
     const numPost = post.length;
 
-    /* 얘도 이상하게도 계속 두번씩 찍힌다....*/
-    console.log(numPost); 
-
     const setPost = props.setPost;
-
-    let postNote = [];
-
     const setPosting = props.posting;
+    let postNote = [];
 
     const newPosting = () => {
         let copy = [...post, {
@@ -24,10 +19,15 @@ function Posting(props) {
         setPosting(false);
     }
 
+    const postText = '글을 작성해주세요';
     return (
         <div className='posting-modal'>
             <table className='posting-table'>
-                <th>글을 작성해주세요</th>
+                <thead>
+                <tr><th> {postText} </th></tr>
+                </thead>
+
+                <tbody>
                 <tr>
                     <td><input type='text' className='input-box' onChange = {(e)=> {
                         postNote = e.target.value;
@@ -35,6 +35,7 @@ function Posting(props) {
                     </td>
                     <td style={{textAlign: 'right'}}><button className='input-button' onClick={newPosting}>등록</button></td>
                 </tr>
+                </tbody>
             </table>
         </div>
     )

@@ -22,22 +22,22 @@ function List(props) {
         setPost(copyPost);
     }
 
+    const postMain = posts.map(function(v) {
+        return (
+        <div key={v.index} className='list'>
+            <h3> 
+                {(v.index+1) + '. '+ v.title} 
+                <span className='icon' onClick={() => setLike(v.index)}>  👍{ v.like }</span>
+                <span className='icon' onClick={() => deleteList(v.index)}><IoCloseOutline/> </span>                        
+            </h3>
+            <p></p>
+            <hr />
+        </div>
+        );
+    });
+
     return (
-        <>{
-            posts.map( (v) => {
-                return (
-                <div className='list'>
-                    <h3> 
-                        {(v.index+1) + '. '+ v.title} 
-                        <span className='icon' onClick={() => setLike(v.index)}>  👍{ v.like }</span>
-                        <span className='icon' onClick={() => deleteList(v.index)}><IoCloseOutline/> </span>                        
-                    </h3>
-                    <p></p>
-                    <hr />
-                </div>
-                );
-            })
-        }</>
+        <>{postMain}</>
     )
 }
 

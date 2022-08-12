@@ -48,7 +48,6 @@ function App() {
     <div className='App'>
 
       {/* 화면 최상단 */}
-
       <nav className='black-nav'>
         <div className='nav-title'><span onClick={() => {window.location.href = '/';}} style={{cursor: 'pointer'}}>개발 Blog</span></div>
         <div className='nav-icon' onClick={()=>{
@@ -57,19 +56,16 @@ function App() {
           <GoGrabber style={{width: '100%', height: '100%', cursor: 'pointer'}}/>
           {modal === true ? <Modal/> : null}
         </div>
-        
       </nav>
       
 
       {/* 화면 본문 */}
       <div className='list-body'>
       
-
       {/* 화면 본문 제목 */}
         <h1 style = { {cursor: 'pointer'} } onClick={ changingTitle }> { title[1] } </h1>
 
       {/* 화면 본문 리스트 */}
-        {console.log(post)} {/* 이상하게도 계속 두번씩 찍힌다....*/}
         <List post = {post} postChange = {postChange} />
 
       {/* 화면 본문 리스트 추가 창 */}
@@ -79,7 +75,7 @@ function App() {
         <button className='posting-button' style = { {cursor: 'pointer'} } onClick={posting} disabled = {postingON}>
           <AiOutlinePlus  style={{width: '100%', height: '100%', color: 'gray'}}/>
         </button>
-      
+        
       </div>
     </div>
   );
